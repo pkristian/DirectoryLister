@@ -4,7 +4,7 @@
 
     <head>
 
-        <title>Directory listing of <?php echo $lister->getListedPath(); ?></title>
+        <title><?php echo $lister->getListedPath(); ?></title>
         <link rel="shortcut icon" href="/<?php echo THEMEPATH; ?>/img/folder.png">
 
         <!-- STYLES -->
@@ -37,11 +37,9 @@
 
                 <p class="navbar-text">
                     <?php foreach($breadcrumbs as $breadcrumb): ?>
-                        <?php if ($breadcrumb != end($breadcrumbs)): ?>
                                 <a href="<?php echo $breadcrumb['link']; ?>"><?php echo $breadcrumb['text']; ?></a>
+                        <?php if ($breadcrumb != end($breadcrumbs)): ?>
                                 <span class="divider">/</span>
-                        <?php else: ?>
-                            <?php echo $breadcrumb['text']; ?>
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </p>

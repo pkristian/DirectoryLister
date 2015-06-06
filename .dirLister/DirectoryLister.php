@@ -108,7 +108,7 @@ class DirectoryLister {
         // Statically set the Home breadcrumb
         $breadcrumbsArray[] = array(
             'link' => $this->_appURL,
-            'text' => 'Home'
+            'text' => $_SERVER['SERVER_NAME']
         );
 
         // Generate breadcrumbs
@@ -178,11 +178,10 @@ class DirectoryLister {
      */
     public function getListedPath() {
 
+        $path = $_SERVER['HTTP_HOST'];
         // Build the path
-        if ($this->_directory == '.') {
-            $path = $this->_appURL;
-        } else {
-            $path = $this->_appURL . $this->_directory;
+        if ($this->_directory != '.') {
+            $path .= '/'.$this->_directory;
         }
 
         // Return the path

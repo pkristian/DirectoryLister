@@ -2,6 +2,7 @@ Directory Lister - The simple PHP directory lister
 ==================================================
 Created by, [Chris Kankiewicz](http://www.ChrisKankiewicz.com)
 
+Froked by [Patrik Kristian](http://pkristian.cz) (read fork information bellow)
 
 Introduction
 ------------
@@ -31,13 +32,16 @@ Requirements
 Directory Lister requires PHP 5.3+ to work properly.  For more information on PHP, please visit
 <http://www.php.net>.
 
+And it runs only on Apache.
+
 
 Installation
 ------------
 
-  1. Copy `resources/default.config.php` to `resources/config.php`
-  2. Upload `index.php` and the `resources` folder to the folder you want listed
-  3. Upload additional files to the same directory as index.php
+  1. Copy `.dirLister/default.config.php` to `.dirLister/config.php`
+  2. Upload `.dirLister.php`, `.htaccess` and the `.dirLister` folder to domain root folder
+  3. ???
+  4. Profit
 
 
 Troubleshooting
@@ -71,3 +75,14 @@ License
 Directory Lister is distributed under the terms of the
 [MIT License](http://www.opensource.org/licenses/mit-license.php).
 Copyright 2015 [Chris Kankiewicz](http://www.chriskankiewicz.com)
+
+
+
+Fork update
+----------
+
+I wanted lister to be able to serve direct requests to directories, so:
+
+It also needs to be in root folder of domain, because of reason.
+
+Very thanks for original creator, he done great job.

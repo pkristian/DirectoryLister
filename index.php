@@ -12,18 +12,23 @@
     // Return file hash
     if (isset($_GET['hash'])) {
 
+        $hashUrl= $_GET['hash'];
+        $hashUrl = ltrim($hashUrl, '/');
+
         // Get file hash array and JSON encode it
-        $hashes = $lister->getFileHash($_GET['hash']);
+        $hashes = $lister->getFileHash($hashUrl);
         $data   = json_encode($hashes);
 
         // Return the data
         die($data);
 
     }
+    $dir = $_SERVER['REQUEST_URI'];
+    $dir = substr($dir, 1);
 
     // Initialize the directory array
-    if (isset($_GET['dir'])) {
-        $dirArray = $lister->listDirectory($_GET['dir']);
+    if (isset($dir)) {
+        $dirArray = $lister->listDirectory($dir);
     } else {
         $dirArray = $lister->listDirectory('.');
     }

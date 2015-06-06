@@ -32,7 +32,7 @@ $(document).ready(function() {
         $('#file-info .filesize').text('Loading...');
 
         $.ajax({
-            url:     '?hash=' + path,
+            url:     '/?hash=' + path,
             type:    'get',
             success: function(data) {
 

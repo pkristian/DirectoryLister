@@ -5,17 +5,17 @@
     <head>
 
         <title>Directory listing of <?php echo $lister->getListedPath(); ?></title>
-        <link rel="shortcut icon" href="<?php echo THEMEPATH; ?>/img/folder.png">
+        <link rel="shortcut icon" href="/<?php echo THEMEPATH; ?>/img/folder.png">
 
         <!-- STYLES -->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/<?php echo THEMEPATH; ?>/css/style.css">
 
         <!-- SCRIPTS -->
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="<?php echo THEMEPATH; ?>/js/directorylister.js"></script>
+        <script type="text/javascript" src="/<?php echo THEMEPATH; ?>/js/directorylister.js"></script>
 
         <!-- FONTS -->
         <link rel="stylesheet" type="text/css"  href="//fonts.googleapis.com/css?family=Cutive+Mono">
@@ -110,7 +110,7 @@
 
                             <?php if ($lister->containsIndex($fileInfo['file_path'])): ?>
 
-                                <a href="<?php echo $fileInfo['file_path']; ?>" class="web-link-button">
+                                <a href="<?php echo $fileInfo['url_path' ]; ?>" class="web-link-button">
                                     <i class="fa fa-external-link"></i>
                                 </a>
 

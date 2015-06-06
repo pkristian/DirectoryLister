@@ -129,7 +129,7 @@ class DirectoryLister {
                 }
 
                 // Combine the base path and dir path
-                $link = $this->_appURL . '?dir=' . rawurlencode($dirPath);
+                $link = $this->_appURL . $dirPath;
 
                 $breadcrumbsArray[] = array(
                     'link' => $link,
@@ -485,7 +485,7 @@ class DirectoryLister {
                         $directoryPath = implode('/', $pathArray);
 
                         if (!empty($directoryPath)) {
-                            $directoryPath = '?dir=' . rawurlencode($directoryPath);
+                            $directoryPath = '/' . $directoryPath;
                         }
 
                         // Add file info to the array
@@ -507,11 +507,7 @@ class DirectoryLister {
                         // Build the file path
                         $urlPath = implode('/', array_map('rawurlencode', explode('/', $relativePath)));
 
-                        if (is_dir($relativePath)) {
-                            $urlPath = '?dir=' . $urlPath;
-                        } else {
-                            $urlPath = $urlPath;
-                        }
+                        $urlPath = '/' . $urlPath;
 
                         // Add the info to the main array
                         $directoryArray[pathinfo($relativePath, PATHINFO_BASENAME)] = array(

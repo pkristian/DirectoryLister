@@ -283,7 +283,7 @@ class DirectoryLister {
         }
 
         // Prevent access to hidden files
-        if ($this->_isHidden($filePath)) {
+        if ($this->_isForbidden($filePath)) {
             return json_encode($hashArray);
         }
 
@@ -390,7 +390,7 @@ class DirectoryLister {
         }
 
         // Prevent access to hidden files
-        if ($this->_isHidden($dir)) {
+        if ($this->_isForbidden($dir)) {
             // Set the error message
             $this->setSystemMessage('danger', '<b>ERROR:</b> Access denied');
 
@@ -647,7 +647,15 @@ class DirectoryLister {
         // Add dot files to hidden files array
         if ($this->_config['hide_dot_files']) {
 
-            $this->_config['hidden_files'][] = '.*';
+            $segments = explode('/', $filePath);
+             end($segments);
+
+            $file = $segments[key($segments)];
+             if (substr($file, 0, 1) === '.')
+             {
+                 return true;
+             }
+
 
         }
 
@@ -662,6 +670,16 @@ class DirectoryLister {
 
         }
 
+        return false;
+
+    }
+
+    protected function _isForbidden($filePath) {
+
+        if ($this->_config['forbit_dot_files'])
+        {
+            return $this->_isHidden($filePath);
+        }
         return false;
 
     }

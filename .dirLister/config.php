@@ -4,18 +4,13 @@ return array(
 
     // Basic settings
     'hide_dot_files'     => true,
+    'forbit_dot_files'   => false,
     'list_folders_first' => true,
     'list_sort_order'    => 'natcasesort',
     'theme_name'         => 'bootstrap',
 
     // Hidden files
     'hidden_files' => array(
-        '*/.ht*',
-        'resources',
-        'resources/*',
-        'analytics.inc',
-        'header.php',
-        'footer.php'
     ),
 
     // Files that, if present in a directory, make the directory a direct link

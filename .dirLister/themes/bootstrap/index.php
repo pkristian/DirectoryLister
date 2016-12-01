@@ -106,13 +106,19 @@
 
                         <?php else: ?>
 
-                            <?php if ($lister->containsIndex($fileInfo['file_path'])): ?>
+                            <?php if ($_SERVER['SERVER_NAME'] == 'localhost' && $_SERVER['REQUEST_URI'] == '/')
+                            { ?>
+                                <a href="http://<?php echo $name; ?>.localhost" class="web-link-button">
+                                    <i class="fa fa-angle-double-right"></i></a>
+                            <?php }
+                            elseif ($lister->containsIndex($fileInfo['file_path']))
+                            { ?>
 
                                 <a href="<?php echo $fileInfo['url_path' ]; ?>" class="web-link-button">
                                     <i class="fa fa-external-link"></i>
                                 </a>
+                            <?php } ?>
 
-                            <?php endif; ?>
 
                         <?php endif; ?>
 

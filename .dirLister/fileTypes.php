@@ -56,7 +56,6 @@ return array(
 
     // Executables
     'app'   => 'fa-list-alt',
-    'bat'   => 'fa-list-alt',
     'com'   => 'fa-list-alt',
     'exe'   => 'fa-list-alt',
     'jar'   => 'fa-list-alt',
